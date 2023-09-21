@@ -1,6 +1,288 @@
+@charset "UTF-8";
+.article img {
+  display: block;
+  margin-inline: auto;
+}
+
+.article > * {
+  padding-block: 4rem;
+}
+
+.article .block-descr {
+  font-size: 1.25rem;
+  line-height: normal;
+}
+
+.article .mw-900 {
+  max-width: 900px;
+}
+
+.article .mw-600 {
+  max-width: 600px;
+}
+
+.article .mw-500 {
+  max-width: 500px;
+}
+
+/* (Start) Блок типа Картинка и Контент */
+.article .wrapper-type-ic {
+  -webkit-padding-after: 0;
+          padding-block-end: 0;
+}
+
+.article .block-type-ic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  padding-block: 2rem;
+}
+
+.article .block-type-ic.reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.article .block-type-ic.no-padding {
+  padding: 0;
+}
+
+/* (End) Блок типа Картинка и Контент */
+/* (Start) Блок типа Множество Картинок и Контент */
+.article .block-type-mic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 3.125rem;
+  padding-block: 1.5rem;
+}
+
+.article .block-type-mic .block-images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.25rem 1fr 1.25rem 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* (End) Блок типа Множество Картинок и Контент */
+/* (Start) Блок типа пошагово Картинка и Контент */
+.article .block-type-lic li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4.5rem;
+}
+
+.article .block-type-lic li + li {
+  margin-top: 3.125rem;
+}
+
+.article .block-type-lic .block-image {
+  width: 100%;
+  max-width: 260px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.article .block-type-lic .block-content {
+  font-family: GilroyExtraBold, sans-serif;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--primary);
+}
+
+/* (End) Блок типа пошагово Картинка и Контент */
+:root {
+  --primary: #065F51;
+  --bg--light: #F7F7F7;
+}
+
 .container--large {
   width: 100%;
   max-width: 1100px;
   margin-inline: auto;
   padding-inline: 15px;
+}
+
+.article .h1,
+.article .h2,
+.article .h3,
+.article .h4 {
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--primary);
+  text-transform: none;
+  margin-bottom: 1.25rem;
+}
+
+.article .h2 {
+  font-size: 42px;
+}
+
+.article .h3 {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.article p {
+  color: black;
+  margin-bottom: 2rem;
+}
+
+.article p:last-child {
+  margin-bottom: 0;
+}
+
+.article.bg-light,
+.article .bg-light {
+  background-color: var(--bg--light);
+}
+
+.article .img-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.article .img-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.article .text-center {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.article .text-uppercase {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1024px) {
+  /* (Start) Блок типа Картинка и Контент */
+  .article .block-type-ic .block-descr {
+    max-width: 50%;
+  }
+  /* (End) Блок типа Картинка и Контент */
+}
+@media screen and (max-width: 768px) {
+  /* (Start) Блок типа Картинка и Контент */
+  .article .wrapper-type-ic {
+    -webkit-padding-after: 3rem;
+            padding-block-end: 3rem;
+  }
+  .article .block-type-ic,
+  .article .block-type-ic.reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .article .block-type-ic .block-descr {
+    max-width: unset;
+  }
+  .article .block-type-ic .block-image {
+    max-width: 60%;
+  }
+  /* (End) Блок типа Картинка и Контент */
+  /* (Start) Блок типа Множество Картинок и Контент */
+  .article .block-type-mic {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .article .block-type-mic > * {
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+  }
+  .article .block-type-mic > *:first-child {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+  .article .block-type-mic > *:last-child {
+    -ms-flex-preferred-size: calc(70% - 0.75rem);
+        flex-basis: calc(70% - 0.75rem);
+  }
+  .article .block-type-mic .block-images {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    -ms-flex-line-pack: start;
+        align-content: start;
+    gap: 0.75rem;
+  }
+  /* (End) Блок типа Множество Картинок и Контент */
+  /* (Start) Блок типа пошагово Картинка и Контент */
+  .article .block-type-lic li {
+    gap: 2rem;
+  }
+  .article .block-type-lic .block-image {
+    width: 30%;
+  }
+  /* (End) Блок типа пошагово Картинка и Контент */
+}
+@media screen and (max-width: 576px) {
+  /* (Start) Блок типа Картинка и Контент */
+  .article .block-type-ic .block-image {
+    max-width: 75%;
+  }
+  /* (End) Блок типа Картинка и Контент */
+  /* (Start) Блок типа Множество Картинок и Контент */
+  .article .block-type-mic {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .article .block-type-mic > *:first-child {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .article .block-type-mic > * {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .article .block-type-mic .block-images {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* (End) Блок типа Множество Картинок и Контент */
+  /* (Start) Блок типа пошагово Картинка и Контент */
+  .article .block-type-lic li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1rem;
+  }
+  .article .block-type-lic .block-image {
+    width: 80%;
+  }
+  .article .block-type-lic .block-content {
+    text-align: center;
+  }
+  /* (End) Блок типа пошагово Картинка и Контент */
 }

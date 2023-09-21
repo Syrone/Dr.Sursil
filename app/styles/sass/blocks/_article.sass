@@ -1,0 +1,73 @@
+.article img 
+	display: block
+	margin-inline: auto
+
+.article > * 
+	padding-block: 4rem
+
+.article .block-descr
+	font-size: 1.25rem
+	line-height: normal
+
+.article .mw-900
+	max-width: 900px
+
+.article .mw-600
+	max-width: 600px
+
+.article .mw-500
+	max-width: 500px
+
+/* (Start) Блок типа Картинка и Контент */
+.article .wrapper-type-ic
+	padding-block-end: 0
+
+.article .block-type-ic
+	display: flex
+	align-items: center
+	justify-content: space-between
+	gap: 1rem
+	padding-block: 2rem
+
+.article .block-type-ic.reverse
+	flex-direction: row-reverse
+
+.article .block-type-ic.no-padding
+	padding: 0
+/* (End) Блок типа Картинка и Контент */
+
+/* (Start) Блок типа Множество Картинок и Контент */
+.article .block-type-mic
+	display: flex
+	flex-direction: column
+	gap: 3.125rem
+	padding-block: 1.5rem
+
+.article .block-type-mic .block-images
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	gap: 1.25rem
+/* (End) Блок типа Множество Картинок и Контент */
+
+/* (Start) Блок типа пошагово Картинка и Контент */
+.article .block-type-lic li
+	display: flex
+	align-items: center
+	gap: 4.5rem
+
+.article .block-type-lic li + li
+	margin-top: 3.125rem
+
+.article .block-type-lic .block-image
+	width: 100%
+	max-width: 260px
+	flex-shrink: 0
+
+.article .block-type-lic .block-content
+	font-family: GilroyExtraBold, sans-serif
+	font-size: 1.875rem
+	font-weight: 700
+	line-height: normal
+	color: var(--primary)
+/* (End) Блок типа пошагово Картинка и Контент */
+

@@ -1,0 +1,84 @@
+@media screen and (max-width: 1024px)
+	/* (Start) Блок типа Картинка и Контент */
+	.article .block-type-ic .block-descr
+		max-width: 50%
+	/* (End) Блок типа Картинка и Контент */
+
+@media screen and (max-width: 768px)
+
+	/* (Start) Блок типа Картинка и Контент */
+	.article .wrapper-type-ic
+		padding-block-end: 3rem
+
+	.article .block-type-ic,
+	.article .block-type-ic.reverse
+		flex-direction: column
+
+	.article .block-type-ic .block-descr
+		max-width: unset
+
+	.article .block-type-ic .block-image
+		max-width: 60%
+	/* (End) Блок типа Картинка и Контент */
+		
+	/* (Start) Блок типа Множество Картинок и Контент */
+	.article .block-type-mic
+		flex-direction: row
+		justify-content: space-between
+		gap: 1.5rem
+	
+	.article .block-type-mic > *
+		flex: 0
+
+	.article .block-type-mic > *:first-child
+		flex-basis: 30%
+
+	.article .block-type-mic > *:last-child
+		flex-basis: calc( 70% - .75rem )
+
+	.article .block-type-mic .block-images 
+		grid-template-columns: repeat(1, 1fr)
+		align-content: start
+		gap: .75rem
+	/* (End) Блок типа Множество Картинок и Контент */
+
+	/* (Start) Блок типа пошагово Картинка и Контент */
+	.article .block-type-lic li
+		gap: 2rem
+
+	.article .block-type-lic .block-image
+		width: 30%
+	/* (End) Блок типа пошагово Картинка и Контент */
+
+@media screen and (max-width: 576px)
+	/* (Start) Блок типа Картинка и Контент */
+	.article .block-type-ic .block-image
+		max-width: 75%
+	/* (End) Блок типа Картинка и Контент */
+
+	/* (Start) Блок типа Множество Картинок и Контент */
+	.article .block-type-mic
+		flex-direction: column
+
+	.article .block-type-mic > *:first-child
+		flex-basis: 100%
+
+	.article .block-type-mic > *
+		flex-basis: 100%
+
+	.article .block-type-mic .block-images 
+		grid-template-columns: repeat(2, 1fr)
+	/* (End) Блок типа Множество Картинок и Контент */
+
+	/* (Start) Блок типа пошагово Картинка и Контент */
+	.article .block-type-lic li
+		flex-direction: column
+		gap: 1rem
+
+	.article .block-type-lic .block-image
+		width: 80%
+
+	.article .block-type-lic .block-content
+		text-align: center
+	/* (End) Блок типа пошагово Картинка и Контент */
+	
