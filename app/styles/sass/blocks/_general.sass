@@ -31,15 +31,41 @@
 	line-height: 1.2
 
 .article p
+	font-size: var(--font-size--md)
+	line-height: normal
 	color: black
-	margin-bottom: 2rem
+	margin: 0
 
-.article p:last-child
-	margin-bottom: 0
+.article p + p
+	margin-top: 1rem
+
+.article .fw-normal
+	font-weight: 400 !important
+
+.article .fw-bold
+	font-weight: 700 !important
 
 .article.bg-light,
 .article .bg-light
 	background-color: var(--bg--light)
+
+.article.bg-primary,
+.article .bg-primary
+	color: white
+	background-color: var(--primary)
+
+.article.bg-primary *,
+.article .bg-primary *
+	color: inherit
+
+.article.bg-gradient,
+.article .bg-gradient
+	color: white
+	background: var(--bg-gradient)
+
+.article.bg-gradient *,
+.article .bg-gradient *
+	color: inherit
 
 .article .img-cover
 	object-fit: cover
@@ -56,3 +82,24 @@
 
 .article .box-shadow
 	box-shadow: var(--box-shadow)
+
+.article .btn
+	width: 100%
+	min-height: 3.75rem
+	display: flex
+	align-items: center
+	justify-content: center
+	font-size: var(--font-size--lg)
+	font-weight: 700
+	line-height: normal
+	text-align: center
+	padding: .625rem 1rem
+
+
+.article .btn-secondary
+	color: white
+	background-color: var(--secondary)
+	border-radius: 2.5rem
+
+.article .btn-secondary:is(:hover, :focus-visible)
+	opacity: .8

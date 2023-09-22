@@ -18,6 +18,9 @@
 .article .mw-500
 	max-width: 500px
 
+.article .no-padding
+	padding: 0 !important
+
 /* (Start) Блок типа Картинка и Контент */
 .article .wrapper-type-ic
 	padding-block-end: 0
@@ -26,14 +29,11 @@
 	display: flex
 	align-items: center
 	justify-content: space-between
-	gap: 1rem
+	gap: 3rem
 	padding-block: 2rem 3rem
 
 .article .block-type-ic.reverse
 	flex-direction: row-reverse
-
-.article .block-type-ic.no-padding
-	padding: 0
 /* (End) Блок типа Картинка и Контент */
 
 /* (Start) Блок типа Множество Картинок и Контент */
@@ -50,6 +50,9 @@
 /* (End) Блок типа Множество Картинок и Контент */
 
 /* (Start) Блок типа пошагово Картинка и Контент */
+.article .block-type-lic
+	padding-block: 3.25rem 1.25rem
+
 .article .block-type-lic h3
 	margin-bottom: 3rem
 
@@ -63,7 +66,7 @@
 
 .article .block-type-lic .block-image
 	width: 100%
-	max-width: 260px
+	max-width: 270px
 	flex-shrink: 0
 
 .article .block-type-lic .block-content
@@ -86,7 +89,7 @@
 /* (Start) Блок типа Контент Картинка Контент */
 .article .block-type-cic
 	display: grid
-	grid-template-columns: minmax(0, 520px) auto 
+	grid-template-columns: minmax(0, 520px) auto
 	grid-template-rows: repeat(2, auto)
 	gap: 2rem 3.125rem
 	margin-bottom: 2.5rem
@@ -96,3 +99,147 @@
 	grid-column: 2 / -1
 
 /* (End) Блок типа Контент Картинка Контент */
+
+/* (Start) Блок типа Заголовок Картинка */
+.article .block-type-ti
+	display: flex
+	align-items: center
+	gap: 3rem
+	margin-bottom: 1.25rem
+
+.article .block-type-ti .block-image
+	flex-shrink: 0
+/* (End) Блок типа Заголовок Картинка */
+
+/* (Start) Блок Примечание */
+.article .block-remark
+	font-family: var(--font-secondary)
+	font-size: var(--font-size--md)
+	font-weight: 300
+	line-height: normal
+	color: var(--text-color)
+	margin-block: 1.25rem
+/* (End) Блок Примечание */
+
+/* (Start) Блок Важно */
+.article .block-important
+	font-family: var(--font-secondary)
+	font-size: var(--font-size--lg)
+	font-weight: 700
+	line-height: normal
+	margin-block: 1.75rem
+
+.article .block-important--primary
+	font-size: var(--font-size--md)
+	color: var(--primary)
+/* (End) Блок Важно */
+
+/* (Start) Блок типа Заголовок Контент */
+.article .wrapper-type-tc
+	padding-block: 5rem
+
+.article .block-type-tc
+	display: flex
+	align-items: stretch
+	justify-content: space-between
+	gap: 10vw
+
+.article .block-type-tc h2
+	margin: 0
+
+.article .block-type-tc .block-content
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	font-weight: 300
+	margin-top: .75rem
+
+.article .block-type-tc .block-accent
+	font-size: var(--font-size--txl)
+	font-weight: 700
+	line-height: normal
+/* (End) Блок типа Заголовок Контент */
+
+/* (Start) Блок типа Предложение купить */
+.article .wrapper-type-otb
+	padding-block: 5rem
+
+.article .block-products
+	--product-item-padding-x: .3rem
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	gap: 2rem
+	padding-block: 2rem
+
+.article .block-products > li
+	display: flex
+	flex-direction: column
+	align-items: stretch
+	justify-content: space-between
+	gap: .875rem
+
+.article .block-products .btn
+	max-width: 230px
+	margin-inline: auto
+	text-transform: none
+
+.article .product-image
+	margin-bottom: .625rem
+
+.article .product-image img
+	border-radius: .625rem
+
+.article .product-title
+	font-size: var(--font-size--lg)
+	font-weight: 700
+	line-height: normal
+	color: var(--primary)
+	text-align: center
+	padding-inline: var(--product-item-padding-x)
+
+.article .product-price
+	font-size: var(--font-size--xl)
+	font-weight: 400
+	line-height: normal
+	color: var(--primary)
+	text-align: center
+	padding-inline: var(--product-item-padding-x)
+	margin-bottom: 1.25rem
+/* (End) Блок типа Предложение купить */
+
+/* (Start) Блок типа Описание Видео*/
+.article .block-video h2
+	margin-bottom: 2rem
+
+.article .block-video .video-author,
+.article .block-video .video-descr
+	max-width: 900px
+	margin-inline: auto
+
+.article .block-video .video-author
+	display: block
+	font-size: calc( var(--font-size--md) + .125rem )
+	font-weight: 700
+	line-height: normal
+	text-align: center
+	margin-bottom: .75rem
+
+.article .block-video .video-descr
+	font-weight: 300
+	line-height: normal
+	text-align: center
+	margin-bottom: 3rem
+
+.article .block-video-wrapper
+	margin-inline: -1rem
+
+.article .block-video-wrapper video
+	display: block
+	width: 100%
+	height: 100%
+	aspect-ratio: 16 / 9
+
+/* (End) Блок типа Описание Видео */
+
+/* (Start) */
+/* (End) */
