@@ -1,0 +1,48 @@
+// Bootstrap compatible gutter variable => $gutter
+// $grid-gutter-width: 30px
+// $gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+// @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/_utilities.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('Rubik', normal, 300, '../fonts/Rubik/Rubik-Light.woff2')
+@include font('Rubik', normal, 400, '../fonts/Rubik/Rubik-Regular.woff2')
+@include font('Rubik', normal, 500, '../fonts/Rubik/Rubik-Medium.woff2')
+@include font('Rubik', normal, 700, '../fonts/Rubik/Rubik-Bold.woff2')
+
+@include font('Inter', normal, 300, '../fonts/Inter/Inter-Light.woff2')
+@include font('Inter', normal, 400, '../fonts/Inter/Inter-Regular.woff2')
+@include font('Inter', normal, 700, '../fonts/Inter/Inter-Bold.woff2')
+
+// GENERAL CSS SETTINGS
+:root
+	/*Colors*/
+	--primary: #065F51
+	--bg--light: #F7F7F7
+	--box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15)
+
+	/*Font*/
+	--font-secondary: Rubik, sans-serif
+	--font-third: Inter, sans-serif
+	--font-system: -apple-system, BlinkMacSystemFont, Arial, sans-serif
+	--font-size: 1rem
+	--line-height: 1.5
+
+.article
+	font-family: var(--font-secondary)
+
+.article *
+	font-family: inherit

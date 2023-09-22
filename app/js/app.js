@@ -3,6 +3,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	console.log('lox');
+	
 
 })
