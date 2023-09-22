@@ -1,18 +1,32 @@
 @media screen and (max-width: 1024px)
+	/* (Start) Блок типа Картинка */
+	.article .block-type-i
+		margin-inline: -1rem
+	/* (End) Блок типа Картинка */
+
 	/* (Start) Блок типа Картинка и Контент */
 	.article .block-type-ic .block-descr
 		max-width: 50%
 	/* (End) Блок типа Картинка и Контент */
 
+	/* (Start) Блок типа Контент Картинка Контент */
+	.article .block-type-cic
+		grid-template-columns: repeat(2, 1fr)
+	/* (End) Блок типа Контент Картинка Контент */
+
 @media screen and (max-width: 768px)
 
+	:root
+		--font-size--md: 1rem
+		--font-size--lg: 1.25rem
+		--font-size--xl: 1.5rem
+		--font-size--xxl: 1.5rem
+
 	/* (Start) Блок типа Картинка и Контент */
-	.article .wrapper-type-ic
-		padding-block-end: 3rem
 
 	.article .block-type-ic,
 	.article .block-type-ic.reverse
-		flex-direction: column
+		flex-direction: column-reverse
 
 	.article .block-type-ic .block-descr
 		max-width: unset
@@ -23,7 +37,6 @@
 		
 	/* (Start) Блок типа Множество Картинок и Контент */
 	.article .block-type-mic
-		flex-direction: row
 		justify-content: space-between
 		gap: 1.5rem
 	
@@ -37,7 +50,7 @@
 		flex-basis: calc( 70% - .75rem )
 
 	.article .block-type-mic .block-images 
-		grid-template-columns: repeat(1, 1fr)
+		grid-template-columns: repeat(3, 1fr)
 		align-content: start
 		gap: .75rem
 	/* (End) Блок типа Множество Картинок и Контент */
@@ -48,12 +61,25 @@
 
 	.article .block-type-lic .block-image
 		width: 30%
+
+	.article .block-type-lic .block-content
+		font-size: var(--font-size--lg)
 	/* (End) Блок типа пошагово Картинка и Контент */
+
+	/* (Start) Блок типа Контент Картинка Контент */
+	.article .block-type-cic
+		grid-template-columns: repeat(1, 1fr)
+		grid-template-rows: repeat(3, auto)
+
+	.article .block-type-cic .block-image
+		grid-column: unset
+		grid-row: 2 / 3
+	/* (End) Блок типа Контент Картинка Контент */
 
 @media screen and (max-width: 576px)
 	/* (Start) Блок типа Картинка и Контент */
 	.article .block-type-ic .block-image
-		max-width: 75%
+		max-width: 100%
 	/* (End) Блок типа Картинка и Контент */
 
 	/* (Start) Блок типа Множество Картинок и Контент */
@@ -67,15 +93,16 @@
 		flex-basis: 100%
 
 	.article .block-type-mic .block-images 
-		grid-template-columns: repeat(2, 1fr)
+		grid-template-columns: repeat(1, 1fr)
 	/* (End) Блок типа Множество Картинок и Контент */
 
 	/* (Start) Блок типа пошагово Картинка и Контент */
 	.article .block-type-lic li
-		flex-direction: column-reverse
-		gap: 1rem
+		flex-direction: column
+		gap: 1.5rem
 
 	.article .block-type-lic .block-image
-		width: 80%
+		width: 100%
+		max-width: 175px
 	/* (End) Блок типа пошагово Картинка и Контент */
 	

@@ -6,7 +6,7 @@
 	padding-block: 4rem
 
 .article .block-descr
-	font-size: 1.25rem
+	font-size: var(--font-size--md)
 	line-height: normal
 
 .article .mw-900
@@ -69,7 +69,7 @@
 .article .block-type-lic .block-content
 	display: flex
 	gap: .5rem
-	font-size: 1.875rem
+	font-size: var(--font-size--xl)
 	font-weight: 700
 	line-height: normal
 	color: var(--primary)
@@ -82,3 +82,17 @@
 	content: counter(my-counter) '.'
 	counter-increment: my-counter
 /* (End) Блок типа пошагово Картинка и Контент */
+
+/* (Start) Блок типа Контент Картинка Контент */
+.article .block-type-cic
+	display: grid
+	grid-template-columns: minmax(0, 520px) auto 
+	grid-template-rows: repeat(2, auto)
+	gap: 2rem 3.125rem
+	margin-bottom: 2.5rem
+
+.article .block-type-cic .block-image
+	grid-row: 1 / -1
+	grid-column: 2 / -1
+
+/* (End) Блок типа Контент Картинка Контент */
