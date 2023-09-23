@@ -30,6 +30,20 @@
 		gap: 1.5rem
 	/* (End) Блок типа Заголовок Контент */
 
+	/* (Start) Блока типа Заголовок Множество Картинок */
+	.article .block-type-tim .block-images
+		grid-template-columns: repeat(3, 1fr)
+		gap: 2rem
+	/* (End) Блока типа Заголовок Множество Картинок */
+
+	/* (Start) Блок типа Попап Кнопка Видео */
+	.article .block-type-pbv
+		gap: 1.5rem
+	/* (End) Блок типа Попап Кнопка Видео */
+
+	/* (Start) */
+	/* (End) */
+
 @media screen and (max-width: 768px)
 
 	:root
@@ -162,6 +176,34 @@
 	.article .block-video .video-descr
 		margin-bottom: 1.5rem
 	/* (End) Блок типа Описание Видео*/
+
+	/* (Start) Блока типа Заголовок Множество Картинок */
+	.article .wrapper-type-tim h2
+		margin-bottom: 1rem
+
+	.article .block-type-tim
+		margin-top: 2rem
+
+	.article .block-type-tim + .block-type-tim
+		margin-top: 2rem
+
+	.article .block-type-tim h3
+		margin-bottom: 1.25rem
+
+	.article .block-type-tim .block-images
+		grid-template-columns: repeat(2, 1fr)
+		gap: 1.25rem 1rem
+
+	.article .block-type-tim .block-images figcaption
+		margin-top: 1rem
+	/* (End) Блока типа Заголовок Множество Картинок */
+
+	/* (Start) Блок типа Попап Кнопка Видео */
+	.article .block-type-pbv
+		grid-template-columns: repeat(2, 1fr)
+		gap: 1rem
+		padding-block: 2rem
+	/* (End) Блок типа Попап Кнопка Видео */
 
 @media screen and (max-width: 576px)
 	/* (Start) Блок типа Картинка и Контент */
