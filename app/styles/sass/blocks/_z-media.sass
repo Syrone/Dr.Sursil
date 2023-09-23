@@ -1,8 +1,18 @@
+@media screen and (min-width: 768px)
+	.mw-md-400
+		max-width: 400px
+
+
 @media screen and (max-width: 1024px)
 	/* (Start) Блок типа Картинка */
 	.article .block-type-i
 		margin-inline: -1rem
 	/* (End) Блок типа Картинка */
+
+	/* (Start) Блок типа Описание Видео*/
+	.article .block-video-wrapper
+		margin-inline: -1rem
+	/* (End) Блок типа Описание Видео*/
 
 	/* (Start) Блок типа Картинка и Контент */
 	.article .block-type-ic .block-descr
@@ -47,6 +57,7 @@
 @media screen and (max-width: 768px)
 
 	:root
+		--font-size: .875rem
 		--font-size--md: 1rem
 		--font-size--lg: 1.25rem
 		--font-size--xl: 1.5rem
@@ -58,6 +69,11 @@
 		min-height: 2.25rem
 		font-size: var(--font-size--md)
 		padding-block: .5rem
+
+	/* (Start) Блок типа Картинка */
+	.article .block-type-i
+		padding-block: 1rem
+	/* (End) Блок типа Картинка */
 
 	/* (Start) Блок типа Картинка и Контент */
 
@@ -101,7 +117,32 @@
 
 	.article .block-type-lic .block-content
 		font-size: var(--font-size--lg)
+		padding-left: 1.5rem
+
+	.article .block-type-lic.counter-list .block-image
+		max-width: 100%
 	/* (End) Блок типа пошагово Картинка и Контент */
+
+	/* (Start) Блок типа пошагово Контент */
+	.article .block-type-lc ul
+		--counter-decorblock: 2.75rem
+		--counter-border-width: 3px
+	
+	.article .block-type-lc li
+		gap: 1rem
+
+	.article .block-type-lc li + li
+		margin-top: 1.125rem
+
+	.article .block-type-lc li::before
+		font-size: var(--font-size--lg)
+
+	.article .block-type-lc li a
+		font-size: var(--font-size)
+
+	.article .block-type-lc .block-content
+		font-size: var(--font-size--md)
+	/* (End) Блок типа пошагово Контент */
 
 	/* (Start) Блок типа Контент Картинка Контент */
 	.article .block-type-cic
@@ -160,15 +201,16 @@
 	/* (End) Блок типа Предложение купить */
 
 	/* (Start) Блок типа Описание Видео*/
-	.article .block-video
-		padding-block: 3.125rem
 	
-	.article .block-video h2,
-	.article .block-video .video-author
-		margin-bottom: 1rem
+	.article .block-video
+		padding-block: 3.125rem 9rem
+		margin-bottom: -6rem
 
 	.article .block-video h2
-		font-size: var(--font-size--lg)
+		margin-bottom: 1.75rem
+
+	.article .block-video .video-author
+		margin-bottom: 1rem
 
 	.article .block-video .video-author
 		font-size: var(--font-size--md)
@@ -179,7 +221,7 @@
 
 	/* (Start) Блока типа Заголовок Множество Картинок */
 	.article .wrapper-type-tim h2
-		margin-bottom: 1rem
+		margin-bottom: 1.25rem
 
 	.article .block-type-tim
 		margin-top: 2rem
@@ -204,6 +246,37 @@
 		gap: 1rem
 		padding-block: 2rem
 	/* (End) Блок типа Попап Кнопка Видео */
+
+	/* (Start) Блок Дополнение */
+	.article .block-addition
+		margin-top: 2.5rem
+
+	.article .block-addition h3
+		font-size: calc( var(--font-size--qxl) - .125rem )
+		margin-bottom: 2rem
+
+	.article .block-addition ul
+		font-size: var(--font-size--lg)
+		line-height: 1.75
+
+	/* (End) Блок Дополнение */
+
+	/* (Start) Блок типа Видео и Описание */
+	.article .block-type-vd
+		gap: 1.25rem
+		padding: 0
+	/* (End) Блок типа Видео и Описание */
+
+	/* (Start) Блок типа Заголовок Контент Контент */
+	.article .block-type-tcc h3
+		margin-bottom: 1.25rem
+
+	.article .block-type-tcc p + p
+		margin-top: 2rem
+	/* (End) Блок типа Заголовок Контент Контент */
+
+	/* (Start)  */
+	/* (End)  */
 
 @media screen and (max-width: 576px)
 	/* (Start) Блок типа Картинка и Контент */
