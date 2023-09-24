@@ -2,7 +2,6 @@
 	.mw-md-400
 		max-width: 400px
 
-
 @media screen and (max-width: 1024px)
 	/* (Start) Блок типа Картинка */
 	.article .block-type-i
@@ -51,6 +50,11 @@
 		gap: 1.5rem
 	/* (End) Блок типа Попап Кнопка Видео */
 
+	/* (Start) Quiz Slick */
+	.article .quiz-product-wrap
+		grid-template-columns: repeat(2, 1fr)
+	/* (End) Quiz Slick */
+
 	/* (Start) */
 	/* (End) */
 
@@ -69,6 +73,10 @@
 		min-height: 2.25rem
 		font-size: var(--font-size--md)
 		padding-block: .5rem
+
+	.article .btn-quantity
+		min-height: 2rem
+		font-size: 1.25rem
 
 	/* (Start) Блок типа Картинка */
 	.article .block-type-i
@@ -127,7 +135,7 @@
 	.article .block-type-lc ul
 		--counter-decorblock: 2.75rem
 		--counter-border-width: 3px
-	
+
 	.article .block-type-lc li
 		gap: 1rem
 
@@ -162,13 +170,13 @@
 	/* (Start) Блок типа Заголовок Контент */
 	.article .wrapper-type-tc
 		padding-block: 3.125rem
-	
+
 	.article .block-type-tc
 		flex-direction: column
 		gap: 0
 
 	.article .block-type-tc .block-content
-		gap: 1rem	
+		gap: 1rem
 
 	.article .block-type-tc h2
 		font-size: var(--font-size--txl)
@@ -195,13 +203,13 @@
 	.article .product-image,
 	.article .product-price
 		margin-bottom: 1rem
-	
+
 	.article .product-title
 		font-size: var(--font-size--md)
 	/* (End) Блок типа Предложение купить */
 
 	/* (Start) Блок типа Описание Видео*/
-	
+
 	.article .block-video
 		padding-block: 3.125rem 9rem
 		margin-bottom: -6rem
@@ -276,8 +284,36 @@
 		margin-top: 1.25rem
 	/* (End) Блок типа Заголовок Контент Контент */
 
-	/* (Start)  */
-	/* (End)  */
+	/* (Start) Quiz Slick */
+	.article .quiz-product-wrap
+		gap: 2.25rem
+
+	.article .quiz-product-title
+		margin-bottom: 1.5rem
+
+	.article .quiz-header li,
+	.article .quiz-header-current
+		gap: .5rem
+		transition: none
+
+	.article .quiz-header li
+		position: absolute
+		opacity: 0
+		visibility: hidden
+
+	.article .quiz-header li.active,
+	.article .quiz-header-total
+		position: static
+		opacity: 1
+		visibility: visible
+
+	.article .quiz-subtext
+		margin-block: 2rem
+
+	.article .quiz-slick-buttons .btn
+		font-size: 1.25rem
+		min-height: 3.75rem
+	/* (End) Quiz Slick */
 
 	/* (Start) Блок типа Блок Действие */
 .article .block-type-ba
@@ -336,3 +372,8 @@
 	.article .block-products
 		grid-template-columns: repeat(1, 1fr)
 	/* (End) Блок типа Предложение купить */
+
+		/* (Start) Quiz Slick */
+	.article .quiz-product-wrap
+		grid-template-columns: repeat(1, 1fr)
+	/* (End) Quiz Slick */

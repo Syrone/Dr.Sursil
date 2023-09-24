@@ -748,22 +748,29 @@ body {
   line-height: normal;
   color: #696969;
   margin-bottom: 2.25rem;
+  position: relative;
   counter-reset: my-counter;
 }
 
-.article .quiz-header li::after {
-  display: block;
+.article .quiz-header li,
+.article .quiz-header-current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.75rem;
+  -webkit-transition: font-size 0.1s ease-in-out, font-weight 0.1s ease-in-out, color 0.1s ease-in-out;
+  transition: font-size 0.1s ease-in-out, font-weight 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+
+.article .quiz-header-current::after {
   content: counter(my-counter);
   counter-increment: my-counter;
 }
 
-.article .quiz-header li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 0.5rem;
-  -webkit-transition: font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
-  transition: font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
+.article .quiz-header-total {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .article .quiz-header li.active {
@@ -815,7 +822,7 @@ body {
 }
 
 .article .quiz-product-price {
-  font-size: var(--font-size--lg);
+  font-size: 1.875rem;
   line-height: normal;
   color: white;
   background-color: var(--primary);
@@ -833,6 +840,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 1rem;
   font-size: var(--font-size--md);
   font-weight: 300;
@@ -861,12 +870,16 @@ body {
   max-width: 6ch;
   min-width: 2rem;
   min-height: 2rem;
-  font-size: var(--font-size--md);
+  font-size: 1.25rem;
   font-weight: 300;
   line-height: normal;
   color: var(--text-color);
   text-align: center;
   padding-inline: 0.25rem;
+}
+
+.article .product-quantity .btn {
+  padding: 0;
 }
 
 .article .quiz-subtext {
@@ -1125,7 +1138,7 @@ body {
   height: unset;
   min-width: 2rem;
   min-height: 2rem;
-  font-size: var(--font-size--md);
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: normal;
   color: var(--text-color);
@@ -1216,6 +1229,12 @@ body {
     gap: 1.5rem;
   }
   /* (End) Блок типа Попап Кнопка Видео */
+  /* (Start) Quiz Slick */
+  .article .quiz-product-wrap {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* (End) Quiz Slick */
   /* (Start) */
   /* (End) */
 }
@@ -1233,6 +1252,10 @@ body {
     min-height: 2.25rem;
     font-size: var(--font-size--md);
     padding-block: 0.5rem;
+  }
+  .article .btn-quantity {
+    min-height: 2rem;
+    font-size: 1.25rem;
   }
   /* (Start) Блок типа Картинка */
   .article .block-type-i {
@@ -1471,8 +1494,38 @@ body {
     margin-top: 1.25rem;
   }
   /* (End) Блок типа Заголовок Контент Контент */
-  /* (Start)  */
-  /* (End)  */
+  /* (Start) Quiz Slick */
+  .article .quiz-product-wrap {
+    gap: 2.25rem;
+  }
+  .article .quiz-product-title {
+    margin-bottom: 1.5rem;
+  }
+  .article .quiz-header li,
+  .article .quiz-header-current {
+    gap: 0.5rem;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .article .quiz-header li {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .article .quiz-header li.active,
+  .article .quiz-header-total {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+  }
+  .article .quiz-subtext {
+    margin-block: 2rem;
+  }
+  .article .quiz-slick-buttons .btn {
+    font-size: 1.25rem;
+    min-height: 3.75rem;
+  }
+  /* (End) Quiz Slick */
   /* (Start) Блок типа Блок Действие */
 }
 .article .block-type-ba {
@@ -1546,4 +1599,11 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
   /* (End) Блок типа Предложение купить */
+  *
+  * /* (Start) Quiz Slick */
+  .article .quiz-product-wrap {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* (End) Quiz Slick */
 }

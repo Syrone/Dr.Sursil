@@ -485,18 +485,24 @@
 	line-height: normal
 	color: #696969
 	margin-bottom: 2.25rem
+	position: relative
 
 	counter-reset: my-counter
 
-.article .quiz-header li::after
-	display: block
+.article .quiz-header li,
+.article .quiz-header-current
+	display: flex
+	gap: .75rem
+	transition: font-size .1s ease-in-out, font-weight .1s ease-in-out, color .1s ease-in-out
+
+.article .quiz-header-current::after
 	content: counter(my-counter)
 	counter-increment: my-counter
 
-.article .quiz-header li
-	display: flex
-	gap: .5rem
-	transition: font-size .3s ease-in-out, font-weight .3s ease-in-out, color .3s ease-in-out
+.article .quiz-header-total
+	position: absolute
+	opacity: 0
+	visibility: hidden
 
 .article .quiz-header li.active
 	font-size: var(--font-size--xxl)
@@ -530,7 +536,7 @@
 	position: relative
 
 .article .quiz-product-price
-	font-size: var(--font-size--lg)
+	font-size: 1.875rem
 	line-height: normal
 	color: white
 	background-color: var(--primary)
@@ -543,6 +549,7 @@
 .article .quiz-product-quantity
 	display: flex
 	align-items: center
+	flex-wrap: wrap
 	gap: 1rem
 	font-size: var(--font-size--md)
 	font-weight: 300
@@ -563,12 +570,15 @@
 	max-width: 6ch
 	min-width: 2rem
 	min-height: 2rem
-	font-size: var(--font-size--md)
+	font-size: 1.25rem
 	font-weight: 300
 	line-height: normal
 	color: var(--text-color)
 	text-align: center
 	padding-inline: .25rem
+
+.article .product-quantity .btn
+	padding: 0
 
 .article .quiz-subtext
 	font-size: var(--font-size--md)

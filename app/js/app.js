@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			inputQuantity.style.width = width;
 		});
 	});
-
 	/** (End) Динамическая ширина Input Quantity **/
 
 
