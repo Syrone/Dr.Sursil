@@ -734,8 +734,183 @@ body {
 }
 
 /* (End) Блок типа Заголовок Контент Контент */
-/* (Start) */
-/* (End) */
+/* (Start) Quiz Slick */
+.article .quiz-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  gap: 2rem;
+  font-size: var(--font-size--md);
+  font-weight: 400;
+  line-height: normal;
+  color: #696969;
+  margin-bottom: 2.25rem;
+  counter-reset: my-counter;
+}
+
+.article .quiz-header li::after {
+  display: block;
+  content: counter(my-counter);
+  counter-increment: my-counter;
+}
+
+.article .quiz-header li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-transition: font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: font-size 0.3s ease-in-out, font-weight 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.article .quiz-header li.active {
+  font-size: var(--font-size--xxl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.article .quiz-header li.accent {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.article .quiz-product-wrap {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1.25rem 1fr 1.25rem 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.article .quiz-product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.article .quiz-product-title {
+  max-width: 320px;
+  font-size: var(--font-size--md);
+  font-weight: 300;
+  line-height: normal;
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+}
+
+.article .quiz-product-image {
+  position: relative;
+}
+
+.article .quiz-product-price {
+  font-size: var(--font-size--lg);
+  line-height: normal;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 0.625rem;
+  padding: 0.625rem 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.article .quiz-product-quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+  font-size: var(--font-size--md);
+  font-weight: 300;
+  line-height: normal;
+  color: var(--text-color);
+  margin-block: 1.5rem;
+}
+
+.article .product-quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.25rem;
+}
+
+.article .product-quantity > * {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.article .product-quantity .quantity-current {
+  width: 1ch;
+  max-width: 6ch;
+  min-width: 2rem;
+  min-height: 2rem;
+  font-size: var(--font-size--md);
+  font-weight: 300;
+  line-height: normal;
+  color: var(--text-color);
+  text-align: center;
+  padding-inline: 0.25rem;
+}
+
+.article .quiz-subtext {
+  font-size: var(--font-size--md);
+  font-weight: 400;
+  line-height: normal;
+  color: var(--primary);
+  margin-block: 1rem;
+}
+
+.article .quiz-slick-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
+}
+
+.article .quiz-slick-buttons .btn {
+  max-width: 150px;
+  min-width: unset;
+  font-size: var(--font-size--md);
+  font-weight: 400;
+  height: unset;
+  border-width: 1px;
+  border-radius: 0.625rem;
+  position: static;
+  -webkit-transform: unset;
+      -ms-transform: unset;
+          transform: unset;
+  text-transform: none;
+}
+
+.article .quiz-slick-buttons .slick-disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* (End) Quiz Slick */
 /* (Start) Блок типа Блок Действие */
 .article .block-type-ba {
   display: -ms-grid;
@@ -896,6 +1071,19 @@ body {
   padding: 0.625rem 1rem;
 }
 
+.article .btn-primary {
+  color: white;
+  background-color: var(--primary);
+  border-radius: 2.5rem;
+  border: 3px solid var(--primary);
+}
+
+.article .btn-primary:is(:hover, :focus-visible, :active),
+.article .btn-primary.active {
+  color: var(--primary);
+  background-color: transparent;
+}
+
 .article .btn-secondary {
   color: white;
   background-color: var(--secondary);
@@ -930,6 +1118,26 @@ body {
 .article .btn-outline--light.active {
   color: var(--primary);
   background-color: white;
+}
+
+.article .btn-quantity {
+  width: unset;
+  height: unset;
+  min-width: 2rem;
+  min-height: 2rem;
+  font-size: var(--font-size--md);
+  font-weight: 700;
+  line-height: normal;
+  color: var(--text-color);
+  background-color: #D9D9D9;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.article .btn-quantity:is(:hover, :focus-visible, :active),
+.article .btn-quantity.active {
+  color: white;
+  background-color: var(--primary);
 }
 
 .article .icon {

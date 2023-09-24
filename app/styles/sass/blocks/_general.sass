@@ -103,6 +103,16 @@
 	text-align: center
 	padding: .625rem 1rem
 
+.article .btn-primary
+	color: white
+	background-color: var(--primary)
+	border-radius: 2.5rem
+	border: 3px solid var(--primary)
+
+.article .btn-primary:is(:hover, :focus-visible, :active),
+.article .btn-primary.active
+	color: var(--primary)
+	background-color: transparent
 
 .article .btn-secondary
 	color: white
@@ -134,6 +144,24 @@
 .article .btn-outline--light.active
 	color: var(--primary)
 	background-color: white
+
+.article .btn-quantity
+	width: unset
+	height: unset
+	min-width: 2rem
+	min-height: 2rem
+	font-size: var(--font-size--md)
+	font-weight: 700
+	line-height: normal
+	color: var(--text-color)
+	background-color: #D9D9D9
+	padding: 0
+	border-radius: 50%
+
+.article .btn-quantity:is(:hover, :focus-visible, :active),
+.article .btn-quantity.active
+	color: white
+	background-color: var(--primary)
 
 .article .icon
 	display: block

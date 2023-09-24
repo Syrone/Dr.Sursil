@@ -1,31 +1,41 @@
 // // Import vendor jQuery plugin example
-// import '~/app/libs/mmenu/dist/mmenu.js'
+// import '~/app/js/jquery-3.7.1.min.js'
 
 document.addEventListener('DOMContentLoaded', () => {
 
-	// Получаем все обертки видео
+	/** (Start) Показываем/Скрываем Кнопку Play и атрибут controls **/
 	const videoWrappers = document.querySelectorAll('.block-video-wrapper');
 
-	// Перебираем каждую обертку видео
 	videoWrappers.forEach(wrapper => {
-		// Получаем видео и span элементы внутри текущей обертки
 		const video = wrapper.querySelector('video');
 		const playIcon = wrapper.querySelector('.icon-video-play');
 
-		// Добавляем обработчик события 'play' для видео
 		video.addEventListener('play', () => {
-			// Скрываем span с классом 'icon-video-play'
 			playIcon.classList.add('hide');
 			video.setAttribute('controls', '');
 		});
 
-		// Добавляем обработчик события 'pause' для видео
 		video.addEventListener('pause', () => {
-			// Отображаем span с классом 'icon-video-play'
 			playIcon.classList.remove('hide');
 			video.removeAttribute('controls');
 		});
 	});
+	/** (End) Показываем/Скрываем Кнопку Play и атрибут controls **/
+
+	/** (Start) Динамическая ширина Input Quantity **/
+	const inputQuantities = document.querySelectorAll('.quantity-current');
+
+	inputQuantities.forEach(inputQuantity => {
+		inputQuantity.addEventListener('input', () => {
+			const value = inputQuantity.value;
+			let length = value.length;
+			let width = length + 'ch';
+
+			inputQuantity.style.width = width;
+		});
+	});
+
+	/** (End) Динамическая ширина Input Quantity **/
 
 
 })

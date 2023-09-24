@@ -191,7 +191,6 @@
 	font-weight: 700
 	line-height: normal
 
-
 /* (End) Блок типа пошагово Контент */
 
 /* (Start) Блок типа Контент Картинка Контент */
@@ -316,7 +315,7 @@
 /* (End) Блок типа Предложение купить */
 
 /* (Start) Блок типа Описание Видео*/
-.article .block-video 
+.article .block-video
 	padding-block: 5rem
 
 .article .block-video h2
@@ -364,7 +363,6 @@
 
 .article .block-video-wrapper .icon.hide
 	opacity: 0
-	
 
 /* (End) Блок типа Описание Видео */
 
@@ -476,8 +474,132 @@
 	margin-top: 1.5rem
 /* (End) Блок типа Заголовок Контент Контент */
 
-/* (Start) */
-/* (End) */
+/* (Start) Quiz Slick */
+.article .quiz-header
+	display: flex
+	align-items: baseline
+	gap: 2rem
+
+	font-size: var(--font-size--md)
+	font-weight: 400
+	line-height: normal
+	color: #696969
+	margin-bottom: 2.25rem
+
+	counter-reset: my-counter
+
+.article .quiz-header li::after
+	display: block
+	content: counter(my-counter)
+	counter-increment: my-counter
+
+.article .quiz-header li
+	display: flex
+	gap: .5rem
+	transition: font-size .3s ease-in-out, font-weight .3s ease-in-out, color .3s ease-in-out
+
+.article .quiz-header li.active
+	font-size: var(--font-size--xxl)
+	font-weight: 700
+	color: var(--primary)
+
+.article .quiz-header li.accent
+	font-weight: 700
+	color: var(--primary)
+
+.article .quiz-product-wrap
+	display: grid
+	grid-template-columns: repeat(3, 1fr)
+	gap: 1.25rem
+
+.article .quiz-product
+	display: flex
+	flex-direction: column
+	align-items: stretch
+	justify-content: space-between
+
+.article .quiz-product-title
+	max-width: 320px
+	font-size: var(--font-size--md)
+	font-weight: 300
+	line-height: normal
+	color: var(--text-color)
+	margin-bottom: 2.5rem
+
+.article .quiz-product-image
+	position: relative
+
+.article .quiz-product-price
+	font-size: var(--font-size--lg)
+	line-height: normal
+	color: white
+	background-color: var(--primary)
+	border-radius: .625rem
+	padding: .625rem 1rem
+	position: absolute
+	bottom: 0
+	left: 0
+
+.article .quiz-product-quantity
+	display: flex
+	align-items: center
+	gap: 1rem
+	font-size: var(--font-size--md)
+	font-weight: 300
+	line-height: normal
+	color: var(--text-color)
+	margin-block: 1.5rem
+
+.article .product-quantity
+	display: flex
+	align-items: center
+	gap: .25rem
+
+.article .product-quantity > *
+	flex-shrink: 0
+
+.article .product-quantity .quantity-current
+	width: 1ch
+	max-width: 6ch
+	min-width: 2rem
+	min-height: 2rem
+	font-size: var(--font-size--md)
+	font-weight: 300
+	line-height: normal
+	color: var(--text-color)
+	text-align: center
+	padding-inline: .25rem
+
+.article .quiz-subtext
+	font-size: var(--font-size--md)
+	font-weight: 400
+	line-height: normal
+	color: var(--primary)
+	margin-block: 1rem
+
+.article .quiz-slick-buttons
+	display: flex
+	align-items: center
+	justify-content: space-between
+	gap: 2rem
+
+.article .quiz-slick-buttons .btn
+	max-width: 150px
+	min-width: unset
+	font-size: var(--font-size--md)
+	font-weight: 400
+	height: unset
+	border-width: 1px
+	border-radius: .625rem
+	position: static
+	transform: unset
+	text-transform: none
+
+.article .quiz-slick-buttons .slick-disabled
+	opacity: 0
+	visibility: hidden
+
+/* (End) Quiz Slick */
 
 /* (Start) Блок типа Блок Действие */
 .article .block-type-ba

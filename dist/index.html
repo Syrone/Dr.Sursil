@@ -15,6 +15,8 @@
 	<link rel="icon" href="images/favicon.png">
 	<meta property="og:image" content="images/dist/preview.jpg">
 	
+	<link rel="stylesheet" href="libs/slick/slick.css">
+	<link rel="stylesheet" href="libs/slick/slick-theme.css">
 	<link rel="stylesheet" href="css/main.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 
@@ -964,7 +966,126 @@
 
 	</section>
 
+	<section class="article">
 
+		<div class="quiz">
+			<div class="container--large">
+
+				<ul class="quiz-header">
+					<li class="active">
+						Шаг
+					</li>
+					<li>
+						Шаг
+					</li>
+					<li>
+						Шаг
+					</li>
+					<li>
+						Шаг
+					</li>
+					<li>
+						Шаг
+					</li>
+					<li>
+						Шаг
+					</li>
+				</ul>
+
+				<div class="quiz-slick">
+					<div>
+						<div class="quiz-slide">
+							<h3 class="h3 text-uppercase">Выбрать стельки по режиму активности и образу жизни:</h3>
+							<div class="quiz-product-wrap">
+								<div class="quiz-product">
+									<h4 class="quiz-product-title">
+										Нормальная повседневная активность, долгая ходьба, стоячая работа, на ногах весь день
+									</h4>
+									<div class="quiz-product-content">
+										<div class="quiz-product-image">
+											<img class="img-cover" src="./images/dist/products/insole-1.jpg" alt="Стелька">
+											<span class="quiz-product-price">9 990 руб</span>
+										</div>
+										<div class="quiz-product-quantity">
+											Количество:
+											<div class="product-quantity">
+												<button class="btn btn-quantity">
+													-
+												</button>
+												<input class="quantity-current" type="text" name="Quantity" placeholder="0">
+												<button class="btn btn-quantity">
+													+
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="quiz-product">
+									<h4 class="quiz-product-title">
+										Умеренные спортивные нагрузки - фитнес режим, легкий бег
+									</h4>
+									<div class="quiz-product-content">
+										<div class="quiz-product-image">
+											<img class="img-cover" src="./images/dist/products/insole-2.jpg" alt="Стелька">
+											<span class="quiz-product-price">7 990 руб</span>
+										</div>
+										<div class="quiz-product-quantity">
+											Количество:
+											<div class="product-quantity">
+												<button class="btn btn-quantity">
+													-
+												</button>
+												<input class="quantity-current" type="text" name="Quantity" placeholder="0">
+												<button class="btn btn-quantity">
+													+
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="quiz-product">
+									<h4 class="quiz-product-title">
+										Сахарный диабет - если Вам поставлен диагноз сахарный диабет просим Вас обязательно выбрать и данный показатель
+									</h4>
+									<div class="quiz-product-content">
+										<div class="quiz-product-image">
+											<img class="img-cover" src="./images/dist/products/insole-3.jpg" alt="Стелька">
+											<span class="quiz-product-price">11 990 руб </span>
+										</div>
+										<div class="quiz-product-quantity">
+											Количество:
+											<div class="product-quantity">
+												<button class="btn btn-quantity">
+													-
+												</button>
+												<input class="quantity-current" type="text" name="Quantity" placeholder="0">
+												<button class="btn btn-quantity">
+													+
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="quiz-subtext text-center">
+							При заказе 2-х стелек скидка 10%
+						</div>
+					</div>
+
+					<div>
+						123
+					</div>
+				</div>
+
+				<div class="quiz-slick-buttons"></div>
+
+			</div>
+		</div>
+
+	</section>
 
 	<section class="article">
 
@@ -985,21 +1106,22 @@
 							Смотреть
 						</button>
 					</div>
-					
+
 					<div class="block-action">
 						<h3 class="h3 text-uppercase">
 							Лечебная физкультура, правильная походка и диета
 						</h3>
 
 						<p class="font-third">
-							Восстановление макроструктуры стопы за счет тренировки мышечно-связочного каркаса стопы вернут стопе функцию правильной опоры и восстановят амортизирующие свойства стопы
+							Восстановление макроструктуры стопы за счет тренировки мышечно-связочного каркаса стопы вернут стопе
+							функцию правильной опоры и восстановят амортизирующие свойства стопы
 						</p>
 
 						<button class="btn btn-outline btn-outline--light text-uppercase">
 							Смотреть
 						</button>
 					</div>
-					
+
 					<div class="block-action">
 						<h3 class="h3 text-uppercase">
 							Ортопедическая обувь НПЦ Сурсил-Орто
@@ -1024,8 +1146,35 @@
 <footer>
 	
 </footer>
-	
+	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="libs/slick/slick.min.js"></script>
 	<script src="js/app.min.js"></script>
+
+	<script>
+		/** (Start) Quiz Slick **/
+		$('.quiz-slick').slick({
+			swipe: false,
+			fade: true,
+			dots: false,
+			infinite: false,
+			speed: 300,
+			slidesToShow: 1,
+			adaptiveHeight: true,
+			appendArrows: '.quiz-slick-buttons',
+			prevArrow: '<button class="btn btn-outline btn-quiz" type="button" class="slick-prev">Назад</button>',
+  		nextArrow: '<button class="btn btn-primary btn-quiz" type="button" class="slick-next">Далее</button>',
+
+
+			afterChange: function(slick, currentSlide) {
+				// Удаляем класс "accent" у всех li элементов в блоке "quiz-header"
+				$('.quiz-header li').removeClass('active');
+
+				// Добавляем класс "accent" к li элементу, соответствующему активному слайду
+				$('.quiz-header li').eq(currentSlide).addClass('active');
+			}
+		});
+		/** (End) Quiz Slick **/
+</script>
 
 </body>
 </html>
