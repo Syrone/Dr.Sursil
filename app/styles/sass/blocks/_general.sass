@@ -43,6 +43,9 @@
 .article p + p
 	margin-top: 1rem
 
+.article .font-third
+	font-family: var(--font-third)
+
 .article .fw-normal
 	font-weight: 400 !important
 
@@ -108,6 +111,29 @@
 
 .article .btn-secondary:is(:hover, :focus-visible)
 	opacity: .8
+
+.article .btn-outline
+	max-width: 220px
+	font-size: var(--font-size--md)
+	color: var(--primary)
+	background-color: transparent
+	border: 3px solid var(--primary)
+	border-radius: 2.5rem
+
+.article .btn-outline:is(:hover, :focus-visible, :active),
+.article .btn-outline.active
+	color: white
+	background-color: var(--primary)
+
+
+.article .btn-outline--light
+	color: white
+	border: 3px solid white
+
+.article .btn-outline--light:is(:hover, :focus-visible, :active),
+.article .btn-outline--light.active
+	color: var(--primary)
+	background-color: white
 
 .article .icon
 	display: block
