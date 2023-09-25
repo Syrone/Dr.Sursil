@@ -45,9 +45,9 @@ function scripts() {
 		.pipe(webpackStream({
 			mode: 'production',
 			performance: { hints: false },
-			plugins: [
-				new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery' }), // jQuery (npm i jquery)
-			],
+			// plugins: [
+			// 	new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', 'window.jQuery': 'jquery' }), // jQuery (npm i jquery)
+			// ],
 			module: {
 				rules: [
 					{

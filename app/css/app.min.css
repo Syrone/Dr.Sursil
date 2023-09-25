@@ -739,6 +739,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: baseline;
       -ms-flex-align: baseline;
           align-items: baseline;
@@ -900,7 +902,10 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  gap: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
 }
 
 .article .quiz-slick-buttons .btn {
@@ -909,6 +914,7 @@ body {
   font-size: var(--font-size--md);
   font-weight: 400;
   height: unset;
+  margin: 0;
   border-width: 1px;
   border-radius: 0.625rem;
   position: static;
@@ -918,9 +924,131 @@ body {
   text-transform: none;
 }
 
+.article .quiz-slick-buttons .btn::before {
+  all: unset;
+}
+
 .article .quiz-slick-buttons .slick-disabled {
   opacity: 0;
   visibility: hidden;
+}
+
+.article .checkbox-choices {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3.125rem 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.125rem;
+  padding-top: 2rem;
+  margin-bottom: 3.75rem;
+}
+
+.article .checkbox-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.5rem;
+  cursor: pointer;
+}
+
+.article .checkbox-item:is(:hover, :focus-visible, :active) .checkbox,
+.article .checkbox-item.active .checkbox {
+  --border-color: var(--primary);
+}
+
+.article .checkbox-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.875rem;
+}
+
+.article .checkbox-content-image {
+  width: 120px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.article .checkbox-content-image img {
+  aspect-ratio: 1/1;
+}
+
+.article .checkbox-content-text h4 {
+  font-size: var(--font-size--md);
+  font-weight: 700;
+  line-height: normal;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.article .form-textarea {
+  padding-top: 2.25rem;
+  margin-bottom: 3.75rem;
+}
+
+.article .form-textarea textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  border: 1px solid #696969;
+  border-radius: 0.5rem;
+}
+
+.article .quiz-slide-thx {
+  color: var(--primary);
+  margin-bottom: 3.75rem;
+}
+
+.article .quiz-slide-thx h3 {
+  margin-bottom: 1.5rem;
+}
+
+.article .quiz-slide-thx .sub-title,
+.article .quiz-slide-thx ul,
+.article .quiz-slide-thx .block-remark,
+.article .quiz-slide-thx .block-important {
+  font-size: var(--font-size--md);
+  font-weight: 700;
+  line-height: normal;
+  color: var(--primary);
+}
+
+.article .quiz-slide-thx .sub-title {
+  margin-bottom: 3rem;
+}
+
+.article .quiz-slide-thx ul {
+  counter-reset: my-counter;
+}
+
+.article .quiz-slide-thx li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.article .quiz-slide-thx li::before {
+  content: counter(my-counter) ".";
+  counter-increment: my-counter;
+}
+
+.article .quiz-slide-thx .block-remark {
+  margin-block: 1rem;
+}
+
+.article .quiz-slide-thx .block-important {
+  margin-block: 1rem 0;
+}
+
+.article .quiz .btn-quiz-thx {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: absolute;
+  right: 0;
 }
 
 /* (End) Quiz Slick */
@@ -1168,6 +1296,82 @@ body {
      object-fit: contain;
 }
 
+.article .icon-checkbox svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2px;
+}
+
+.article .wrapper-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  position: relative;
+}
+
+.article .checkbox {
+  --size: 2rem;
+  --background: transparent;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: #696969;
+  --border-radius: .5rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: var(--size);
+  height: var(--size);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--background);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  outline: none;
+}
+
+.article .checkbox:is(:hover, :focus-visible) {
+  --border-color: var(--primary);
+}
+
+.article .checkbox::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/dist/icons/checkbox.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.article .checkbox:checked {
+  --border-color: var(--primary);
+}
+
+.article .checkbox:checked::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.article .hide {
+  position: absolute !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
 @media screen and (min-width: 768px) {
   .mw-md-400 {
     max-width: 400px;
@@ -1233,6 +1437,11 @@ body {
   .article .quiz-product-wrap {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+  }
+  .article .checkbox-choices {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.125rem 1.75rem;
   }
   /* (End) Quiz Slick */
   /* (Start) */
@@ -1518,6 +1727,13 @@ body {
     opacity: 1;
     visibility: visible;
   }
+  .article .checkbox-choices {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .article .quiz-slide h3 {
+    margin-bottom: 1.75rem;
+  }
   .article .quiz-subtext {
     margin-block: 2rem;
   }
@@ -1525,27 +1741,26 @@ body {
     font-size: 1.25rem;
     min-height: 3.75rem;
   }
+  .article .form-textarea {
+    margin-bottom: 2.5rem;
+  }
   /* (End) Quiz Slick */
   /* (Start) Блок типа Блок Действие */
+  .article .block-type-ba {
+    gap: 1.75rem;
+  }
+  .article .block-action {
+    padding: 3.125rem 1.875rem;
+  }
+  .article .block-action h3,
+  .article .block-action * {
+    color: inherit;
+  }
+  .article .block-action .btn {
+    margin-top: 1.875rem;
+  }
+  /* (End) Блок типа Блок Действие */
 }
-.article .block-type-ba {
-  gap: 1.75rem;
-}
-
-.article .block-action {
-  padding: 3.125rem 1.875rem;
-}
-
-.article .block-action h3,
-.article .block-action * {
-  color: inherit;
-}
-
-.article .block-action .btn {
-  margin-top: 1.875rem;
-}
-
-/* (End) Блок типа Блок Действие */
 @media screen and (max-width: 576px) {
   /* (Start) Блок типа Картинка и Контент */
   .article .block-type-ic {
@@ -1599,11 +1814,18 @@ body {
     grid-template-columns: repeat(1, 1fr);
   }
   /* (End) Блок типа Предложение купить */
-  *
-  * /* (Start) Quiz Slick */
+  /* (Start) Quiz Slick */
   .article .quiz-product-wrap {
     -ms-grid-columns: (1fr)[1];
     grid-template-columns: repeat(1, 1fr);
+  }
+  .article .checkbox-content-image {
+    width: 70px;
+  }
+  .article .quiz .btn-quiz-thx {
+    width: 100%;
+    max-width: unset;
+    position: static;
   }
   /* (End) Quiz Slick */
 }
