@@ -342,13 +342,16 @@
 
 .article .block-video-wrapper
 	position: relative
+	aspect-ratio: 16 / 9
+	background-color: gray
+	cursor: pointer
+	flex-shrink: 0
 
-.article .block-video-wrapper video
+.article .block-video-wrapper iframe
 	display: block
 	width: 100%
 	height: 100%
-	aspect-ratio: 16 / 9
-	cursor: pointer
+	border: none
 
 .article .block-video-wrapper .icon
 	width: 7.25rem
@@ -363,6 +366,13 @@
 
 .article .block-video-wrapper .icon.hide
 	opacity: 0
+
+.article .block-video-poster
+	width: 100%
+	height: 100%
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center
 
 /* (End) Блок типа Описание Видео */
 
@@ -460,6 +470,9 @@
 	display: flex
 	gap: 3.125rem
 	padding-block: 1.25rem
+
+.article .block-type-vd .block-video-wrapper
+	flex-basis: 55%
 /* (End) Блок типа Видео и Описание */
 
 /* (Start) Блок типа Заголовок Контент Контент */
