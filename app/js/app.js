@@ -70,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 
 		$('.quiz-header-total span').text(totalSlides);
+
+		$('.btn-quiz').on('click', function() {
+			var headerOffset = $('.quiz-header').offset().top - 64;
+			$('html, body').animate({
+				scrollTop: headerOffset
+			}, 500);
+		});
 	});
 
 	$('.quiz-slick').on('init', function (event, slick) {
