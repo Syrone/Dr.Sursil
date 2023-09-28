@@ -1402,6 +1402,12 @@ body {
        object-fit: contain;
   }
 }
+@media screen and (min-width: 576px) {
+  .article .img-sm-contain {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
 @media screen and (max-width: 1024px) {
   /* (Start) Блок типа Картинка */
   .article .block-type-i {
@@ -1838,6 +1844,9 @@ body {
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
   }
+  .article .block-type-lic.counter-content .block-image {
+    max-width: unset;
+  }
   .article .block-type-lic .block-image {
     width: 100%;
     max-width: 175px;
@@ -1845,7 +1854,8 @@ body {
   /* (End) Блок типа пошагово Картинка и Контент */
   /* (Start) Блок типа Заголовок Картинка */
   .article .block-type-ti .block-image {
-    max-width: 175px;
+    width: 100%;
+    max-width: unset;
   }
   /* (End) Блок типа Заголовок Картинка */
   /* (Start) Блок типа Предложение купить */
