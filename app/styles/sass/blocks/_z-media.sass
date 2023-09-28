@@ -2,6 +2,9 @@
 	.mw-md-400
 		max-width: 400px
 
+	.article .img-md-contain
+		object-fit: contain
+
 @media screen and (max-width: 1024px)
 	/* (Start) Блок типа Картинка */
 	.article .block-type-i
@@ -356,7 +359,8 @@
 		gap: 1.5rem
 
 	.article .block-type-ic .block-image
-		max-width: 90%
+		width: 100%
+		max-width: unset
 	/* (End) Блок типа Картинка и Контент */
 
 	/* (Start) Блок типа Множество Картинок и Контент */
@@ -378,6 +382,9 @@
 		flex-direction: column
 		gap: 1.5rem
 
+	.article .block-type-lic.counter-content li
+		flex-direction: column-reverse
+
 	.article .block-type-lic .block-image
 		width: 100%
 		max-width: 175px
@@ -396,6 +403,12 @@
 	/* (Start) Quiz Slick */
 	.article .quiz-product-wrap
 		grid-template-columns: repeat(1, 1fr)
+
+	.article .checkbox-choices--pain .checkbox-content-image
+		width: 30vw
+
+	.article .checkbox-choices--pain .checkbox-content-image img
+		aspect-ratio: 4 / 3
 
 	.article .checkbox-content-image
 		width: 70px
