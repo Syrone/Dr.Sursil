@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		nextArrow: '<button class="btn btn-primary btn-quiz slick-next" type="button">Далее</button>',
 	});
 
-	$(document).ready(function () {
+	$(function () {
 		var totalSlides = $('.quiz-slick').slick('getSlick').slideCount - 1;
 
 		for (var i = 0; i < totalSlides; i++) {
@@ -71,12 +71,99 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		$('.quiz-header-total span').text(totalSlides);
 
-		$('.btn-quiz').on('click', function() {
+		$('.btn-quiz').on('click', function () {
 			var headerOffset = $('.quiz-header').offset().top - 64;
 			$('html, body').animate({
 				scrollTop: headerOffset
 			}, 500);
 		});
+
+
+		// Добавляем invalid к кнопке .slick-next
+		var slickNextButton = $('<button>', {
+			class: 'btn btn-primary btn-quiz btn-quiz--invalid',
+			text: 'Далее'
+		});
+		$('.quiz .slick-next').addClass('slick-disabled')
+		$('.quiz-slick-buttons').append(slickNextButton);
+
+		// Проверяем значения input на каждом слайде
+		$('.quiz-slick').on('afterChange', function (event, slick, currentSlide) {
+			var totalSlides = slick.slideCount;
+			var slide = $('.quiz-slick .slick-slide[data-slick-index="' + currentSlide + '"]');
+
+			// Проверяем, есть ли класс .slide-checked на текущем слайде
+			if (slide.hasClass('slide-checked')) {
+				var inputs = slide.find('input');
+
+				// Проверяем, выбран ли какой-то из input или имеет значение выше 0
+				var hasValue = false;
+				inputs.each(function () {
+					if ($(this).is(':checked') || parseInt($(this).val()) > 0) {
+						hasValue = true;
+						return false; // Прерываем цикл, если найдено значение
+					}
+				});
+
+				// Если условие выполняется, убираем invalid у кнопки .slick-next
+				if (hasValue) {
+					$('.quiz .slick-next').removeClass('slick-disabled')
+					$('.quiz-slick-buttons .btn-quiz--invalid').detach();
+				} else {
+					$('.quiz .slick-next').addClass('slick-disabled')
+					$('.quiz-slick-buttons').append(slickNextButton);
+				}
+			} else {
+				$('.quiz .slick-next').removeClass('slick-disabled')
+				$('.quiz-slick-buttons .btn-quiz--invalid').detach();
+			}
+
+			if (!(currentSlide === totalSlides - 1) === false) {
+				$('.quiz .slick-next').addClass('slick-disabled')
+			}
+		});
+
+		// Обработчик изменения значений input
+		$('.quiz-slick .slide-checked input').on('change', function () {
+			var currentSlide = $('.quiz-slick').slick('slickCurrentSlide');
+			var slide = $('.quiz-slick .slick-slide[data-slick-index="' + currentSlide + '"]');
+
+			// Проверяем, есть ли класс .slide-checked на текущем слайде
+			if (slide.hasClass('slide-checked')) {
+				var inputs = slide.find('input');
+
+				// Проверяем, выбран ли какой-то из input или имеет значение выше 0
+				var hasValue = false;
+				inputs.each(function () {
+					if ($(this).is(':checked') || parseInt($(this).val()) > 0) {
+						hasValue = true;
+						return false; // Прерываем цикл, если найдено значение
+					}
+				});
+
+				// Если условие выполняется, убираем invalid у кнопки .slick-next
+				if (hasValue) {
+					$('.quiz .slick-next').removeClass('slick-disabled')
+					$('.quiz-slick-buttons .btn-quiz--invalid').detach();
+				} else {
+					$('.quiz .slick-next').addClass('slick-disabled')
+					$('.quiz-slick-buttons').append(slickNextButton);
+				}
+			}
+		});
+
+		$('.quiz .slick-next').on('click', function () {
+			if (!$(this).hasClass('slick-disabled')) {
+				$('.quiz-slick').slick('slickNext');
+				$(this).addClass('slick-disabled')
+				$('.quiz-slick-buttons').append(slickNextButton);
+			}
+		});
+
+		$('.quiz .btn-quiz--invalid').on('click', function () {
+			alert('Пожалуйста, выберите хотя бы одно значение')
+		});
+
 	});
 
 	$('.quiz-slick').on('init', function (event, slick) {
