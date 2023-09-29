@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	/** (Start) Quiz Slick **/
-	$('.quiz-slick').slick({
+	var quizSlick = $('.quiz-slick').slick({
 		swipe: false,
 		fade: true,
 		dots: false,
@@ -56,6 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		prevArrow: '<button class="btn btn-outline btn-quiz slick-prev" type="button">Назад</button>',
 		nextArrow: '<button class="btn btn-primary btn-quiz slick-next" type="button">Далее</button>',
 	});
+
+	// Создание экземпляра MutationObserver
+	var observerQuizSlick = new MutationObserver(function () {
+		// Обновление высоты слайдера
+		quizSlick.slick("setPosition");
+	});
+
+	// Настройка наблюдения за изменениями в DOM-структуре
+	var targetNodeQuiz = document.querySelector('.quiz-slick');
+	var configQuiz = { childList: true, subtree: true };
+	observerQuizSlick.observe(targetNodeQuiz, configQuiz);
 
 	$(function () {
 		var totalSlides = $('.quiz-slick').slick('getSlick').slideCount - 1;
@@ -84,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			class: 'btn btn-primary btn-quiz btn-quiz--invalid',
 			text: 'Далее'
 		});
+		var blockInvalid = $('<div class="block-invalid">Пожалуйста, выберите хотя бы один вариант</div>');
+		var blockInvalidAdded = false;
 		$('.quiz .slick-next').addClass('slick-disabled')
 		$('.quiz-slick-buttons').append(slickNextButton);
 
@@ -109,6 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (hasValue) {
 					$('.quiz .slick-next').removeClass('slick-disabled')
 					$('.quiz-slick-buttons .btn-quiz--invalid').detach();
+
+					// Удаляем класс "invalid" с обертки input с классом "checkbox-item" или "quiz-product"
+					$('.quiz-slick .slide-checked .checkbox-item, .quiz-slick .slide-checked .quiz-product').removeClass('invalid');
+					$('.quiz-slick .block-invalid').detach();
+					blockInvalidAdded = false;
 				} else {
 					$('.quiz .slick-next').addClass('slick-disabled')
 					$('.quiz-slick-buttons').append(slickNextButton);
@@ -145,6 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				if (hasValue) {
 					$('.quiz .slick-next').removeClass('slick-disabled')
 					$('.quiz-slick-buttons .btn-quiz--invalid').detach();
+
+					// Удаляем класс "invalid" с обертки input с классом "checkbox-item" или "quiz-product"
+					$('.quiz-slick .slide-checked .checkbox-item, .quiz-slick .slide-checked .quiz-product').removeClass('invalid');
+					$('.quiz-slick .block-invalid').detach();
+					blockInvalidAdded = false;
 				} else {
 					$('.quiz .slick-next').addClass('slick-disabled')
 					$('.quiz-slick-buttons').append(slickNextButton);
@@ -157,11 +180,21 @@ document.addEventListener('DOMContentLoaded', () => {
 				$('.quiz-slick').slick('slickNext');
 				$(this).addClass('slick-disabled')
 				$('.quiz-slick-buttons').append(slickNextButton);
+
+				// Удаляем класс "invalid" с обертки input с классом "checkbox-item" или "quiz-product"
+				$('.quiz-slick .slide-checked .checkbox-item, .quiz-slick .slide-checked .quiz-product').removeClass('invalid');
+				$('.quiz-slick .block-invalid').detach();
+				blockInvalidAdded = false;
 			}
 		});
 
 		$('.quiz .btn-quiz--invalid').on('click', function () {
-			alert('Пожалуйста, выберите хотя бы одно значение')
+			// Добавляем класс "invalid" к обертке input с классом "checkbox-item" или "quiz-product"
+			$('.quiz-slick .slide-checked .checkbox-item, .quiz-slick .slide-checked .quiz-product').addClass('invalid');
+			if (!blockInvalidAdded) {
+				$('.quiz-slick').append(blockInvalid);
+				blockInvalidAdded = true;
+			}
 		});
 
 	});
